@@ -1,0 +1,21 @@
+services:
+  postgres:
+    container_name: postgres_demoJDBC_v2
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: fitax_user      # username cusub
+      POSTGRES_PASSWORD: fitax_pass  # password cusub
+      POSTGRES_DB: fitax_db          # database cusub
+    ports:
+      - "5433:5432"                  # port cusub si uu uga sooco kii hore
+
+  pgadmin:
+    container_name: pgadmin4_demoJDBC_v2
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: fitax@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: fitax
+    ports:
+      - "5051:80"                    # port cusub si uu uga sooco kii hore
